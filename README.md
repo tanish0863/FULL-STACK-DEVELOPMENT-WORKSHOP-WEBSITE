@@ -4,6 +4,25 @@ A high-performance, visually stunning registration system designed for the **IIC
 
 ---
 
+## 📸 UI Previews
+
+<div align="center">
+  <img src="ui%20images/Screenshot%202026-05-06%20003021.png" width="800" alt="Home Page">
+  <br>
+  <em>Main Landing Page with Cinematic Effects</em>
+  <br><br>
+  <img src="ui%20images/Screenshot%202026-05-06%20003122.png" width="400" alt="Registration Modal">
+  <img src="ui%20images/Screenshot%202026-05-06%20003138.png" width="400" alt="Progressive Flow">
+  <br>
+  <em>Smooth Progressive Registration Flow</em>
+  <br><br>
+  <img src="ui%20images/Screenshot%202026-05-06%20003418.png" width="600" alt="Event Pass">
+  <br>
+  <em>Digital Event Pass with QR Code Generation</em>
+</div>
+
+---
+
 ## 📝 Problem Statement
 
 Traditional event registration systems often suffer from clunky user interfaces, lack of real-time confirmation, and fragmented data management. For technical clubs like IIC, a manual registration process or simple forms often lead to:
@@ -93,4 +112,4 @@ Traditional event registration systems often suffer from clunky user interfaces,
 
 ---
 
-Built with ❤️ by **Antigravity** for the IIC Club.
+Built with ❤️ for the IIC Club.
