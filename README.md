@@ -86,4 +86,4 @@ Finally, the system generates your personalized **Digital Event Pass**. It featu
 
 ---
 
-Built with ❤️ for the IIC Club.
+
