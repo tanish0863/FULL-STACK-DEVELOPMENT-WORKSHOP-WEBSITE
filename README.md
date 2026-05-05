@@ -1,8 +1,9 @@
-# 🚀 IIC Club Workshop: Full-Stack Registration Platform
+# 🚀 IIC Task 4: Full-Stack Workshop Registration Platform
 
 **Live Demo**: [https://full-stack-development-workshop-web.vercel.app/](https://full-stack-development-workshop-web.vercel.app/)
 
-A high-performance, visually stunning registration system designed for the **IIC Club Submission 2026**. This platform provides a seamless bridge between event organizers and participants, featuring a premium UI and a robust MongoDB-powered backend.
+## 📝 Project Overview
+This platform is a comprehensive solution for **Task 4: Full Stack Development – Workshop Website**. It addresses the common fragmentation in college event registrations by providing a unified, professional, and automated system for event details, participant registration, and digital pass generation.
 
 ---
 
@@ -25,93 +26,87 @@ A high-performance, visually stunning registration system designed for the **IIC
 
 ---
 
-## 📝 Problem Statement
+## 🔍 Problem Statement (Scenario)
+College events often suffer from scattered information, boring registration forms, and a total lack of structured confirmation systems. Participants rarely receive a professional entry pass, leading to confusion on the event day.
 
-Traditional event registration systems often suffer from clunky user interfaces, lack of real-time confirmation, and fragmented data management. For technical clubs like IIC, a manual registration process or simple forms often lead to:
-1.  **Poor User Experience**: High drop-off rates due to boring, complex forms.
-2.  **Lack of Professionalism**: No immediate digital confirmation or downloadable event pass.
-3.  **Data Fragmentation**: Using multiple platforms (Forms, Sheets, Manual Entry) makes it difficult to track participants efficiently.
-
-**The Solution**: This project solves these issues by providing a **unified, full-stack platform** that combines an engaging, animated "Progressive Registration" flow with a secure database and instant digital card generation.
-
----
-
-## ✨ Features of the System
-
-### 🎨 Premium User Experience
--   **Cinematic UI**: A dark-themed, glassmorphic design featuring vibrant indigo and cyan accents.
--   **Progressive Form Flow**: A multi-step registration process that reduces cognitive load and increases completion rates.
--   **Framer Motion Animations**: Smooth transitions, hover effects, and interactive elements that make the site feel alive.
-
-### 🎫 Digital Pass Generation
--   **Instant Card Generation**: Automatically creates a personalized digital pass upon successful registration.
--   **Unique ID System**: Assigns a secure, timestamped Unique ID (UID) to every participant.
--   **Downloadable Assets**: High-quality PNG download functionality for participants to save their entry cards.
-
-### ⚙️ Robust Architecture
--   **Real-time Validation**: Client-side and server-side validation for emails and required fields.
--   **MongoDB Persistence**: Reliable data storage for high-volume participant management.
--   **API Proxying**: Seamless frontend-to-backend communication via Next.js rewrites.
+**The Solution**: This platform solves these issues by:
+-   **Consolidating Information**: All workshop details, speaker bios, and agendas are in one cinematic interface.
+-   **Modernizing Registration**: Replaces static forms with a premium "Progressive Flow" experience.
+-   **Automating Confirmation**: Instantly generates a unique digital event card upon successful registration.
 
 ---
 
-## 🛠️ Tech Stack Used
+## 🔄 System Flow (Implementation)
+The project strictly follows the required system flow:
+1.  **Discovery**: User views the landing page with cinematic animations and event details.
+2.  **Details**: Comprehensive sections for Speaker Bio, Schedule/Agenda, and Date/Time.
+3.  **Registration**: A multi-step form captures Name, Email, Phone, and College/Department.
+4.  **Storage**: Data is securely persisted in a **MongoDB Atlas** database.
+5.  **Confirmation**: A success screen appears with a generated **Digital Event Card**.
+6.  **Utility**: The card features a **Unique Reference ID** and is available for **PNG Download**.
+
+---
+
+## ✨ Features
+
+### 1. Workshop Website (Frontend)
+-   **Cinematic Design**: Dark-themed, glassmorphic UI built with Next.js and Tailwind CSS.
+-   **Speaker Section**: Detailed bio and expertise profile.
+-   **Schedule**: Interactive agenda and timeline.
+-   **Responsive**: Fully optimized for mobile, tablet, and desktop.
+
+### 2. Registration System
+-   **Progressive Form**: Multi-step registration to reduce user fatigue.
+-   **Real-time Validation**: Validates name, email format, and college details.
+
+### 3. Data Storage
+-   **MongoDB Atlas**: Full CRUD integration via a Node.js/Express backend.
+-   **Persistence**: Ensuring every registration is recorded and retrievable.
+
+### 4. Event Card Generation (Key Feature)
+-   **Dynamic Rendering**: Generates a card with the participant's name and a Unique ID.
+-   **QR Code**: Includes a scannable QR code for check-in verification.
+-   **One-Click Download**: High-quality PNG download functionality using `html2canvas`.
+
+---
+
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 | :--- | :--- |
-| **Frontend Framework** | Next.js 16 (App Router) |
-| **UI Library** | React 19, Tailwind CSS v4 |
-| **Components** | shadcn/ui, Lucide Icons |
+| **Frontend** | Next.js 16 (App Router), React 19 |
+| **Styling** | Tailwind CSS v4 |
 | **Animations** | Framer Motion |
 | **Backend** | Node.js, Express.js |
-| **Database** | MongoDB Atlas (Mongoose ODM) |
-| **Notifications** | Sonner (Toast System) |
+| **Database** | MongoDB Atlas (Mongoose) |
+| **Icons/UI** | Lucide-react, shadcn/ui |
 
 ---
 
 ## 🚀 Setup Instructions
 
-### 1. Prerequisites
--   **Node.js** (v18 or higher)
--   **MongoDB Atlas** account (or local MongoDB instance)
--   **npm** or **pnpm** package manager
+### 1. Backend Configuration
+```bash
+cd backend
+npm install
+# Create .env with MONGO_URI and PORT
+npm run dev
+```
 
-### 2. Backend Configuration
-1.  Navigate to the backend directory:
-    ```bash
-    cd backend
-    npm install
-    ```
-2.  Create a `.env` file in the `backend/` folder:
-    ```env
-    PORT=5000
-    MONGO_URI=your_mongodb_atlas_connection_string
-    ```
-3.  Start the backend server:
-    ```bash
-    npm run dev
-    ```
-
-### 3. Frontend Configuration
-1.  Navigate to the root directory and install dependencies:
-    ```bash
-    npm install
-    ```
-2.  Start the Next.js development server:
-    ```bash
-    npm run dev
-    ```
-3.  Access the platform at `http://localhost:3000`.
+### 2. Frontend Configuration
+```bash
+npm install
+# Set NEXT_PUBLIC_BACKEND_URL in your env
+npm run dev
+```
 
 ---
 
 ## ⚖️ General Guidelines
-
--   **Environment Safety**: Never commit your `.env` file to a public repository. A `.env.example` has been provided for reference.
--   **Database Access**: Ensure your MongoDB Atlas IP Access List is configured to allow connections from your current IP.
--   **Production Build**: To prepare the project for production, run `npm run build` in the root directory.
--   **Code Quality**: Maintain semantic HTML structure and descriptive variable naming for future scalability.
+-   **Security**: `.env` files are ignored to protect sensitive credentials.
+-   **Performance**: Optimized assets and lazy-loaded animations for fast performance.
+-   **User Experience**: Instant feedback through `Sonner` toast notifications.
 
 ---
 
-Built with ❤️ for the IIC Club.
+Built with ❤️ as a solution for **IIC Task 4**.
