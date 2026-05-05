@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     console.error('Registration error:', error);
     
-    // Check for duplicate email if needed (though not strictly required by the current frontend)
+    // Check for duplicate email
     if (error.code === 11000) {
         return res.status(400).json({ error: 'Email already registered' });
     }
@@ -44,9 +44,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-// @desc    Get all registrations (Development only)
+// @desc    Get all registrations
 // @route   GET /api/register
-// @access  Private/Dev
+// @access  Public
 router.get('/', async (req, res) => {
   try {
     const registrations = await Registration.find().sort({ timestamp: -1 });
