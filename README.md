@@ -1,5 +1,7 @@
 # 🚀 IIC Club Workshop: Full-Stack Registration Platform
 
+**Live Demo**: [https://full-stack-development-workshop-web.vercel.app/](https://full-stack-development-workshop-web.vercel.app/)
+
 A high-performance, visually stunning registration system designed for the **IIC Club Submission 2026**. This platform provides a seamless bridge between event organizers and participants, featuring a premium UI and a robust MongoDB-powered backend.
 
 ---
